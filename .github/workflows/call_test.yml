@@ -1,0 +1,11 @@
+name: Test github action bool call inputs
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    uses: ./.github/workflows/test.yml
+    with:
+      passed_true: true
+      passed_false: false
