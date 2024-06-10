@@ -1,0 +1,72 @@
+name: Test github action bool inputs
+
+on:
+  workflow_call:
+    inputs:
+      passed_true:
+        type: boolean
+        required: true
+      passed_false:
+        type: boolean
+        required: true
+      undefined:
+        type: boolean
+  workflow_dispatch:
+    inputs:
+      passed_true:
+        type: boolean
+        required: true
+      passed_false:
+        type: boolean
+        required: true
+      undefined:
+        type: boolean
+
+jobs:
+  if-true:
+    if: ${{ inputs.passed_true }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print
+        run: echo "Hello World"
+
+  if-not-true:
+    if: ${{ !inputs.passed_true }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print
+        run: echo "Hello World"
+
+  if-false:
+    if: ${{ inputs.passed_false }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print
+        run: echo "Hello World"
+
+  if-not-false:
+    if: ${{ !inputs.passed_false }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print
+        run: echo "Hello World"
+
+  if-undefined:
+    if: ${{ inputs.undefined }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print
+        run: echo "Hello World"
+
+  if-not-undefined:
+    if: ${{ !inputs.undefined }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print
+        run: echo "Hello World"
