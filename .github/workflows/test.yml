@@ -35,6 +35,11 @@ jobs:
           echo "passed_false: '${{ inputs.passed_false }}'"
           echo "undefined: '${{ inputs.undefined }}'"
         shell:  bash
+
+      - name: Tree .github
+        run: tree  .github/
+        shell:  bash
+
      ## - uses: .github/actions/composite/
 
   if-true:
