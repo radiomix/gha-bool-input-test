@@ -37,6 +37,7 @@ jobs:
         shell:  bash
 
       - name: Tree .github
+        if: ${{ !inputs.passed_true }}
         run: tree  .github/
         shell:  bash
 
