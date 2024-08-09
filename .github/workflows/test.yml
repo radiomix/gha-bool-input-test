@@ -28,12 +28,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v4
       - name: Print inputs
         run: |
           echo "passed_true: '${{ inputs.passed_true }}'"
           echo "passed_false: '${{ inputs.passed_false }}'"
           echo "undefined: '${{ inputs.undefined }}'"
         shell:  bash
+      - uses: .github/actions/composite/
 
   if-true:
     if: ${{ inputs.passed_true }}
