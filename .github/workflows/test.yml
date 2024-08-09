@@ -41,6 +41,7 @@ jobs:
         shell:  bash
 
       - uses: ./.github/actions/composite
+        if: ${{ inputs.passed_true }}
 
   if-true:
     if: ${{ inputs.passed_true }}
