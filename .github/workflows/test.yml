@@ -1,4 +1,4 @@
-name: Test github action with manual bool inputs
+name: Test github action with manual boolean inputs
 
 on:
   workflow_call:
