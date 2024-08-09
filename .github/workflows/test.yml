@@ -35,7 +35,7 @@ jobs:
           echo "passed_false: '${{ inputs.passed_false }}'"
           echo "undefined: '${{ inputs.undefined }}'"
         shell:  bash
-      - uses: .github/actions/composite/
+     ## - uses: .github/actions/composite/
 
   if-true:
     if: ${{ inputs.passed_true }}
