@@ -2,6 +2,9 @@ name: Test github action bool call inputs
 
 on:
   workflow_dispatch:
+  push:
+  schedule:
+  - cron: '9 0 * * 3'
 
 jobs:
   test:
