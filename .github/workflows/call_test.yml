@@ -1,4 +1,4 @@
-name: Test github action bool call inputs
+name: Test github action call with fixed bool inputs
 
 on:
   workflow_dispatch:
