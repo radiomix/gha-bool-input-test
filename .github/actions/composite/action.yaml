@@ -1,0 +1,14 @@
+# Reusable composite GH action
+#
+
+name: "test caller inputs"
+
+description: "Test inputs being passed here"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Show inputs
+      run: |
+        echo " **** INPUTS **** "
+      shell: bash

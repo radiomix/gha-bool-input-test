@@ -42,6 +42,7 @@ jobs:
     steps:
       - name: Print
         run: echo "Hello World"
+      - uses: .github/actions/composite/
 
   if-not-true:
     if: ${{ !inputs.passed_true }}
