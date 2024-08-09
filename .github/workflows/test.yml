@@ -1,0 +1,84 @@
+name: Test github action with manual boolean inputs
+
+on:
+  workflow_call:
+    inputs:
+      passed_true:
+        type: boolean
+        required: true
+      passed_false:
+        type: boolean
+        required: true
+      undefined:
+        type: boolean
+  workflow_dispatch:
+    inputs:
+      passed_true:
+        type: boolean
+        required: true
+      passed_false:
+        type: boolean
+        required: true
+      undefined:
+        type: boolean
+
+jobs:
+
+  show-inputs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print inputs
+        run: |
+          echo "passed_true: '${{ inputs.passed_true }}'"
+          echo "passed_false: '${{ inputs.passed_false }}'"
+          echo "undefined: '${{ inputs.undefined }}'"
+        shell:  bash
+
+  if-true:
+    if: ${{ inputs.passed_true }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print
+        run: echo "Hello World"
+
+  if-not-true:
+    if: ${{ !inputs.passed_true }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print
+        run: echo "Hello World"
+
+  if-false:
+    if: ${{ inputs.passed_false }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print
+        run: echo "Hello World"
+
+  if-not-false:
+    if: ${{ !inputs.passed_false }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print
+        run: echo "Hello World"
+
+  if-undefined:
+    if: ${{ inputs.undefined }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print
+        run: echo "Hello World"
+
+  if-not-undefined:
+    if: ${{ !inputs.undefined }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print
+        run: echo "Hello World"
