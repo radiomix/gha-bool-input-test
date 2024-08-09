@@ -6,7 +6,7 @@ on:
 
 jobs:
   test:
-    uses: radiomix/gha-bool-input-test./.github/workflows/build.yaml@master
+    uses: radiomix/gha-bool-input-test/.github/workflows/build.yaml@master
     with:
       passed_true: true
       passed_false: false
