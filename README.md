@@ -1,3 +1,5 @@
+Cloned from: https://github.com/Kristonitas/ga-bool-input-test
+
 Test dispatch inputs by calling
 
 ```
