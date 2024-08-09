@@ -40,7 +40,7 @@ jobs:
         run: tree  .github/
         shell:  bash
 
-      - uses: .github/actions/composite
+      - uses: ./.github/actions/composite/action.yaml
 
   if-true:
     if: ${{ inputs.passed_true }}
